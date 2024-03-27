@@ -20,7 +20,7 @@ import { DarkMode, LightMode } from "@mui/icons-material";
 import { toggleActionTheme } from '../redux/actions/themeAction';
 
 
-const pages = ['Home', 'Log In'];
+const pages = ['Home', 'Lkhlhlk'];
 
 
 const Navbar = () => {
@@ -111,11 +111,17 @@ const Navbar = () => {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                <MenuItem  onClick={handleCloseNavMenu}>
+                            
+                                 <Typography textAlign="center"><Link style={{ textDecoration: "none", color: palette.secondary.main }} to="/login">Login</Link></Typography>
+
                                 </MenuItem>
-                            ))}
+                                <MenuItem  onClick={handleCloseNavMenu}>
+
+                                <Typography textAlign="center"><Link style={{ textDecoration: "none", color: palette.secondary.main }} to="/register">Register</Link></Typography>
+                                </MenuItem>
+
+                            
                         </Menu>
                     </Box>
                     <WorkIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
