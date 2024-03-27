@@ -144,7 +144,6 @@ const Navbar = () => {
                         ETHIO JOBS
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {/* menu desktop */}
 
                         <Button
                             onClick={handleCloseNavMenu}
