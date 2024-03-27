@@ -9,6 +9,10 @@ import ChartComponent from '../../component/ChartComponent';
 
 
 const AdminDashboard = () => {
+    const roles=[0,1]
+    const administratorsCount = roles.filter((role) => role === 1).length;
+    // const jobsCount = jobs.length;
+    // // const jobCategoriesCount = job;
     return (
         <>
             <Box>
@@ -21,7 +25,7 @@ const AdminDashboard = () => {
                 >
 
                     <StatComponent
-                        value="45621"
+                        value={administratorsCount}
                         icon={<SupervisorAccountIcon sx={{ color: "#fafafa", fontSize: 30 }} />}
                         description="Administrators"
                         money=''

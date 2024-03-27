@@ -4,7 +4,7 @@ import { DataGrid, gridClasses } from '@mui/x-data-grid';
 import { Link } from 'react-router-dom';
 import AddIcon from '@mui/icons-material/Add';
 import { useDispatch, useSelector } from 'react-redux';
-import { jobLoadAction } from '../../redux/actions/jobAction';
+import { deleteSingleJobAction, jobLoadAction } from '../../redux/actions/jobAction';
 
 
 
@@ -17,15 +17,19 @@ const DashJobs = () => {
         dispatch(jobLoadAction())
     }, []);
 
-
+    const { success: deleteSuccess } = useSelector(state => state.deleteJob);
     const { jobs, loading } = useSelector(state => state.loadJobs);
     let data = [];
     data = (jobs !== undefined && jobs.length > 0) ? jobs : []
 
-
-    //delete job by Id
+    // delete a job by id
     const deleteJobById = (e, id) => {
-        console.log(id)
+        if (window.confirm(`You really want to delete product ID: "${id}" ?`)) {
+            dispatch(deleteSingleJobAction(id));
+            if (deleteSuccess && deleteSuccess === true) {
+                dispatch(jobLoadAction())
+            }
+        }
     }
 
     const columns = [
@@ -45,13 +49,13 @@ const DashJobs = () => {
             field: 'jobType',
             headerName: 'Category',
             width: 150,
-            valueGetter: (data) => data.row.jobType.jobTypeName
+            valueGetter: (data) => data.row?.jobType?.jobTypeName
         },
         {
             field: 'user',
             headerName: 'User',
             width: 150,
-            valueGetter: (data) => data.row.user.firstName
+            valueGetter: (data) => data.row?.user?.firstName
         },
         {
             field: 'available',
@@ -85,6 +89,7 @@ const DashJobs = () => {
             )
         }
     ];
+
 
 
     return (

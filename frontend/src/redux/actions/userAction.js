@@ -15,7 +15,10 @@ import {
     USER_LOGOUT_SUCCESS,
     USER_SIGNIN_FAIL,
     USER_SIGNIN_REQUEST,
-    USER_SIGNIN_SUCCESS
+    USER_SIGNIN_SUCCESS,
+    USER_SIGNUP_FAIL,
+    USER_SIGNUP_REQUEST,
+    USER_SIGNUP_SUCCESS
 } from '../constants/userConstant';
 
 
@@ -39,12 +42,32 @@ export const userSignInAction = (user) => async (dispatch) => {
     }
 }
 
+// user sign up action
+export const userSignUpAction = (user) => async (dispatch) => {
+    dispatch({ type: USER_SIGNUP_REQUEST });
+    try {
+        const { data } = await axios.post("/api/signup", user);
+
+        dispatch({
+            type: USER_SIGNUP_SUCCESS,
+            payload: data
+        });
+        toast.success("Register Successfully!");
+    } catch (error) {
+        dispatch({
+            type: USER_SIGNUP_FAIL,
+            payload: error.response.data.error
+        });
+        toast.error(error.response.data.error);
+    }
+}
+
 //log out action
 export const userLogoutAction = () => async (dispatch) => {
     dispatch({ type: USER_LOGOUT_REQUEST });
     try {
-        const { data } = await axios.get("/api/logout");
         localStorage.removeItem('userInfo');
+        const { data } = await axios.get("/api/logout");
         dispatch({
             type: USER_LOGOUT_SUCCESS,
             payload: data

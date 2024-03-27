@@ -45,7 +45,7 @@ const jobsHistorySchema = new mongoose.Schema({
 }, { timestamps: true })
 
 const userSchema = new mongoose.Schema({
-
+    
     firstName: {
         type: String,
         trim: true,

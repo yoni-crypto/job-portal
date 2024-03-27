@@ -37,18 +37,16 @@ const SearchInputEl = () => {
 
     return (
 
-        <form onSubmit={handleSubmit} style={{background:"liteGray",
-            width: '50%', boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px"
-        }}>
+        <form onSubmit={handleSubmit} style={{ width: '50%' }}>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                 {/* <Search> */}
 
-                <InputBase sx={{ bgcolor: 'white', padding: '10px' }}
+                <InputBase sx={{ bgcolor: 'white', padding: '10px', color: "rgba(0, 0, 0, 0.9)" }}
                     fullWidth={true}
                     id="search"
                     name="search"
                     label="search"
-                    placeholder='Enter job name'
+                    placeholder='ex: developer, front end'
                     value={values.search}
                     onChange={handleChange}
                     error={touched.search && Boolean(errors.search)}
@@ -66,3 +64,4 @@ const SearchInputEl = () => {
 };
 
 export default SearchInputEl;
+
