@@ -14,9 +14,7 @@ const Header = () => {
             backgroundImage: `url(${headerImage})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
-            backgroundColor: theme.palette.secondary.main,
-
-
+            backgroundColor: theme.palette.secondary.main
         }
 
     ));
