@@ -8,12 +8,12 @@ const Footer = () => {
         <>
             <Box sx={{
                 height: '70px',
-                bgcolor: palette.secondary.midNightBlue,
+                bgcolor: palette.primary.main,
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center'
             }}>
-                <Box component='span' sx={{ color: palette.primary.main }}>All rights reserved! 2023.</Box>
+                <Box component='span' sx={{ color: palette.secondary.main }}>All rights reserved! 2023.</Box>
 
             </Box>
         </>
