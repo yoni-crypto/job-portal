@@ -62,7 +62,6 @@ const Navbar = () => {
     return (
         <AppBar position="static" sx={{ bgcolor: palette.primary.main }}>
             <Container >
-                {/* principal Menu */}
                 <Toolbar disableGutters>
                     <WorkIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                     <Typography
@@ -80,7 +79,7 @@ const Navbar = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        JOB PORTAL
+                        ETHIO JOBS
                     </Typography>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -136,7 +135,7 @@ const Navbar = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        JOB PORTAL
+                        ETHIO JOBS
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {/* menu desktop */}
