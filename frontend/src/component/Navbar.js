@@ -119,13 +119,21 @@ const Navbar = () => {
                                         </Typography>
                                     </MenuItem>
                                 ) : (
+                                    <>
+                                    <MenuItem onClick={handleCloseNavMenu}>
+                                        <Typography textAlign="center">
+                                            <Link style={{ textDecoration: "none", color: palette.secondary.main }} to="/home">Home</Link>
+                                        </Typography>
+                                    </MenuItem>
                                     <MenuItem onClick={handleCloseNavMenu}>
                                         <Typography textAlign="center">
                                             <Link style={{ textDecoration: "none", color: palette.secondary.main }} to="/register">Register</Link>
                                         </Typography>
                                     </MenuItem>
+                                    </>
                                 )
                             }
+
 
 
                         </Menu>
