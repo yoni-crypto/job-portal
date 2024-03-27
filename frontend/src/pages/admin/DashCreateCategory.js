@@ -41,8 +41,8 @@ const DashCreateCategory = () => {
             <Box sx={{ height: '100%', display: "flex", alignItems: "center", justifyContent: "center", pt: 4 }}>
 
 
-                <Box onSubmit={formik.handleSubmit} component="form" className='form_style border-style' >
-                    <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
+                <Box onSubmit={formik.handleSubmit} component="form" className='form_style border-style' sx={{minWidth:"280px"}} >
+                    <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%",minWidth:"220px" }}>
                         <Typography variant="h5" component="h2" sx={{ pb: 3 }}>
                             Create a Category
                         </Typography>

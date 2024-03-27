@@ -74,7 +74,7 @@ const App = () => {
                             <Route path='/user/dashboard' element={<UserRoute>< UserDashboardHOC /></UserRoute>} />
                             <Route path='/user/jobs' element={<UserRoute>< UserJobsHistoryHOC /></UserRoute>} />
                             <Route path='/user/info' element={<UserRoute>< UserInfoDashboardHOC /></UserRoute>} />
-                            <Route path='*' element={<NotFound />} />
+                            <Route path='*' element={<NotFound />}/>
                         </Routes>
                     </BrowserRouter>
                 </ProSidebarProvider>

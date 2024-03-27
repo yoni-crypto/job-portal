@@ -37,7 +37,7 @@ const SearchInputEl = () => {
 
     return (
 
-        <form onSubmit={handleSubmit} style={{ width: '50%' }}>
+        <form onSubmit={handleSubmit} style={{ width: '50%',minWidth:"330px" }}>
             <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
                 {/* <Search> */}
 

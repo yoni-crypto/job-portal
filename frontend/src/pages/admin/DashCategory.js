@@ -73,9 +73,9 @@ const DashCategory = () => {
             <Box sx={{ pb: 2, display: "flex", justifyContent: "right" }}>
                 <Button variant="contained" color="success" startIcon={<AddIcon />}><Link style={{ color: "white", textDecoration: "none" }} to='/admin/category/create'>Create category</Link></ Button>
             </Box>
-            <Paper sx={{ bgcolor: "secondary.midNightBlue" }} >
+            <Paper sx={{ bgcolor: "secondary.midNightBlue" ,minWidth:"250px"}} >
 
-                <Box sx={{ height: 400, width: '100%' }}>
+                <Box sx={{ height: 400, width: '100%' ,minWidth:"220px"}}>
                     <DataGrid
                         getRowId={(row) => row._id}
                         sx={{

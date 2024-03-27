@@ -15,7 +15,7 @@ const AdminDashboard = () => {
     // // const jobCategoriesCount = job;
     return (
         <>
-            <Box>
+            <Box sx={{minWidth:"220px"}}>
                 <Typography variant="h4" sx={{ color: "white", pb: 3 }}>
                     Dashboard
                 </Typography>

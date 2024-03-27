@@ -71,7 +71,7 @@ const DashUsers = () => {
 
     return (
         <>
-            <Box >
+            <Box sx={{minWidth:"220px"}}>
 
                 <Typography variant="h4" sx={{ color: "white", pb: 3 }}>
                     All users
@@ -81,7 +81,7 @@ const DashUsers = () => {
                 </Box>
                 <Paper sx={{ bgcolor: "secondary.midNightBlue" }} >
 
-                    <Box sx={{ height: 400, width: '100%' }}>
+                    <Box sx={{ height: 400, width: '100%',minWidth:"250px" }}>
                         <DataGrid
                             sx={{
 

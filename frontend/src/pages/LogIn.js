@@ -63,7 +63,7 @@ const LogIn = () => {
             <Box sx={{ height: '86vh', display: "flex", alignItems: "center", justifyContent: "center"}}>
 
 
-                <Box onSubmit={formik.handleSubmit} component="form" className='form_style border-style' style={{minWidth:"400px" }} >
+                <Box onSubmit={formik.handleSubmit} component="form" className='form_style border-style' style={{minWidth:"350px" }} >
                     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%",minWidth:"300px" }}>
                         <Avatar sx={{ m: 1, bgcolor: "primary.main", mb: 3 }}>
                             <LockClockOutlined />

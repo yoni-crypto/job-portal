@@ -20,7 +20,6 @@ import { DarkMode, LightMode } from "@mui/icons-material";
 import { toggleActionTheme } from '../redux/actions/themeAction';
 
 
-const pages = ['Home', 'Lkhlhlk'];
 
 
 const Navbar = () => {
@@ -111,17 +110,24 @@ const Navbar = () => {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                                <MenuItem  onClick={handleCloseNavMenu}>
-                            
-                                 <Typography textAlign="center"><Link style={{ textDecoration: "none", color: palette.secondary.main }} to="/login">Login</Link></Typography>
 
-                                </MenuItem>
-                                <MenuItem  onClick={handleCloseNavMenu}>
+                            {
+                                userInfo ? (
+                                    <MenuItem onClick={handleCloseNavMenu}>
+                                        <Typography textAlign="center">
+                                            <Link style={{ textDecoration: "none", color: palette.secondary.main }} to="/profile">Profile</Link>
+                                        </Typography>
+                                    </MenuItem>
+                                ) : (
+                                    <MenuItem onClick={handleCloseNavMenu}>
+                                        <Typography textAlign="center">
+                                            <Link style={{ textDecoration: "none", color: palette.secondary.main }} to="/register">Register</Link>
+                                        </Typography>
+                                    </MenuItem>
+                                )
+                            }
 
-                                <Typography textAlign="center"><Link style={{ textDecoration: "none", color: palette.secondary.main }} to="/register">Register</Link></Typography>
-                                </MenuItem>
 
-                            
                         </Menu>
                     </Box>
                     <WorkIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -211,16 +217,26 @@ const Navbar = () => {
                             </MenuItem>
 
                             {
-                                !userInfo ?
-
-                                    <MenuItem onClick={handleCloseUserMenu}>
-                                        <Typography textAlign="center"><Link style={{ textDecoration: "none", color: palette.secondary.main }} to="/login">Log In</Link></Typography>
-                                    </MenuItem> :
-
+                                !userInfo ? (
+                                    <>
+                                        <MenuItem onClick={handleCloseUserMenu}>
+                                            <Typography textAlign="center">
+                                                <Link style={{ textDecoration: "none", color: palette.secondary.main }} to="/login">Log In</Link>
+                                            </Typography>
+                                        </MenuItem>
+                                        <MenuItem onClick={handleCloseUserMenu}>
+                                            <Typography textAlign="center">
+                                                <Link style={{ textDecoration: "none", color: palette.secondary.main }} to="/register">Register</Link>
+                                            </Typography>
+                                        </MenuItem>
+                                    </>
+                                ) : (
                                     <MenuItem onClick={logOutUser}>
                                         <Typography style={{ textDecoration: "none", color: palette.secondary.main }} textAlign="center">Log Out</Typography>
                                     </MenuItem>
+                                )
                             }
+
 
 
                         </Menu>
