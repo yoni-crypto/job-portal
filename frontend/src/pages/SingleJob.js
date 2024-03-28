@@ -9,9 +9,11 @@ import Navbar from '../component/Navbar'
 import { jobLoadSingleAction } from '../redux/actions/jobAction'
 import Button from '@mui/material/Button'
 import { userApplyJobAction } from '../redux/actions/userAction'
+import { useTheme } from '@emotion/react'
 
 
 const SingleJob = () => {
+    const { palette } = useTheme();
     const dispatch = useDispatch();
     const { singleJob, loading } = useSelector(state => state.singleJob)
     const { id } = useParams();
@@ -34,7 +36,7 @@ const SingleJob = () => {
             <Box sx={{ bgcolor: "#fafafa" }}>
 
                 <Navbar />
-                <Box sx={{ height: '85vh' }}>
+                <Box sx={{ height: 'calc(100vh - 140px)' }}>
                     <Container sx={{ pt: '30px' }}>
 
                         <Stack
@@ -46,7 +48,7 @@ const SingleJob = () => {
                                 {
                                     loading ? <LoadingBox /> :
 
-                                        <Card>
+                                        <Card sx={{ bgcolor: palette.primary.white }} >
                                             <CardContent>
                                                 <Typography variant="h5" component="h3">
                                                     {singleJob && singleJob.title}
@@ -69,8 +71,8 @@ const SingleJob = () => {
                                 }
                             </Box>
                             <Box sx={{ flex: 1, p: 2 }}>
-                                <Card sx={{ p: 2 }}>
-                                    <Button onClick={applyForAJob} sx={{ fontSize: "13px" }} variant='contained'>Apply for this Job</Button>
+                                <Card sx={{ p: 2, bgcolor: palette.primary.white }}>
+                                    <Button onClick={applyForAJob} sx={{ fontSize: "13px" }} variant='contained'>Applied for this Job</Button>
                                 </Card>
                             </Box>
 

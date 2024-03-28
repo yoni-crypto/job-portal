@@ -60,15 +60,22 @@ const LogIn = () => {
     return (
         <>
             <Navbar />
-            <Box sx={{ height: '86vh', display: "flex", alignItems: "center", justifyContent: "center"}}>
+            <Box sx={{ minHeight: 'calc(100vh - 140px)', display: "flex", alignItems: "center", justifyContent: "center", bgcolor: "primary.white" }}>
 
 
-                <Box onSubmit={formik.handleSubmit} component="form" className='form_style border-style' style={{minWidth:"350px" }} >
-                    <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%",minWidth:"300px" }}>
+                <Box onSubmit={formik.handleSubmit} component="form" className='form_style border-style' >
+                    <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", width: "100%" }}>
                         <Avatar sx={{ m: 1, bgcolor: "primary.main", mb: 3 }}>
-                            <LockClockOutlined />
+                            <LockClockOutlined sx={{ color: 'white' }} />
                         </Avatar>
-                        <TextField sx={{ mb: 3 }}
+                        <TextField
+                            sx={{
+                                mb: 3,
+                                "& .MuiInputBase-root": {
+                                    color: 'text.secondary',
+                                },
+                                fieldset: { borderColor: "rgb(231, 235, 240)" }
+                            }}
                             fullWidth
                             id="email"
                             label="E-mail"
@@ -76,6 +83,7 @@ const LogIn = () => {
                             InputLabelProps={{
                                 shrink: true,
                             }}
+
                             placeholder="E-mail"
                             value={formik.values.email}
                             onChange={formik.handleChange}
@@ -83,7 +91,14 @@ const LogIn = () => {
                             error={formik.touched.email && Boolean(formik.errors.email)}
                             helperText={formik.touched.email && formik.errors.email}
                         />
-                        <TextField sx={{ mb: 3 }}
+                        <TextField
+                            sx={{
+                                mb: 3,
+                                "& .MuiInputBase-root": {
+                                    color: 'text.secondary'
+                                },
+                                fieldset: { borderColor: "rgb(231, 235, 240)" }
+                            }}
                             fullWidth
                             id="password"
                             name="password"
