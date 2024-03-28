@@ -122,7 +122,7 @@ const Navbar = () => {
                                     <>
                                     <MenuItem onClick={handleCloseNavMenu}>
                                         <Typography textAlign="center">
-                                            <Link style={{ textDecoration: "none", color: palette.secondary.main }} to="/home">Home</Link>
+                                            <Link style={{ textDecoration: "none", color: palette.secondary.main }} to="/">Home</Link>
                                         </Typography>
                                     </MenuItem>
                                     <MenuItem onClick={handleCloseNavMenu}>
