@@ -115,7 +115,7 @@ const Navbar = () => {
                                 userInfo ? (
                                     <MenuItem onClick={handleCloseNavMenu}>
                                         <Typography textAlign="center">
-                                            <Link style={{ textDecoration: "none", color: palette.secondary.main }} to="/profile">Profile</Link>
+                                            <Link style={{ textDecoration: "none", color: palette.secondary.main }} to="/user/info">Profile</Link>
                                         </Typography>
                                     </MenuItem>
                                 ) : (

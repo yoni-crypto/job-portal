@@ -12,8 +12,8 @@ const UserInfoDashboard = () => {
     const { palette } = useTheme();
     return (
         <>
-            <Box sx={{ maxWidth: "50%", margin: "auto", pt: 10 }}>
-                <Card sx={{ minWidth: 275, bgcolor: palette.secondary.midNightBlue }}>
+            <Box sx={{ maxWidth: "50%", margin: "auto", pt: 10 ,minWidth:"220px"}}>
+                <Card sx={{ minWidth: 275, bgcolor: palette.secondary.midNightBlue ,minWidth:"250px"}}>
                     <CardContent>
                         <Typography sx={{ fontSize: 16 }} color="#fafafa" gutterBottom>
                             Personal Info
