@@ -38,7 +38,7 @@ const Home = () => {
 
     return (
         <>
-            <Box sx={{ bgcolor: "#fafafa", minHeight: "100vh" }}>
+            <Box sx={{ bgcolor: "#liteGray",minHeight: "100vh" }}>
 
                 <Navbar />
                 <Header />
@@ -48,7 +48,7 @@ const Home = () => {
                         spacing={{ xs: 1, sm: 2, md: 4 }}
                     >
                         <Box sx={{ flex: 2, p: 2 }}>
-                            <Card sx={{ minWidth: 150, mb: 3, mt: 3, p: 2 }}>
+                            <Card sx={{ minWidth: 150, mb: 3, mt: 3, p: 2, bgcolor: palette.primary.white }}>
                                 <Box sx={{ pb: 2 }}>
                                     <Typography component="h4" sx={{ color: palette.secondary.main, fontWeight: 600 }}>
                                         Filter job by category
@@ -59,7 +59,7 @@ const Home = () => {
                             </Card>
 
                             {/* jobs by location */}
-                            <Card sx={{ minWidth: 150, mb: 3, mt: 3, p: 2 }}>
+                            <Card sx={{ minWidth: 150, mb: 3, mt: 3, p: 2, bgcolor: palette.primary.white }}>
                                 <Box sx={{ pb: 2 }}>
                                     {/* <h4>Filter by category</h4> */}
                                     <Typography component="h4" sx={{ color: palette.secondary.main, fontWeight: 600 }}>
@@ -72,7 +72,7 @@ const Home = () => {
                                                     <ListItemIcon>
                                                         <LocationOnIcon sx={{ color: palette.secondary.main, fontSize: 18 }} />
                                                     </ListItemIcon>
-                                                    <Link to={`/search/location/${location}`}>{location}</Link>
+                                                    <Link style={{ color: palette.secondary.main }} to={`/search/location/${location}`}>{location}</Link>
                                                 </MenuItem>
 
                                             ))
@@ -114,7 +114,7 @@ const Home = () => {
                                         ))
                             }
                             <Stack spacing={2} >
-                                <Pagination page={page} count={pages === 0 ? 1 : pages} onChange={(event, value) => setPage(value)} />
+                                <Pagination color="primary" variant="outlined" page={page} count={pages === 0 ? 1 : pages} onChange={(event, value) => setPage(value)} />
                             </Stack>
                         </Box>
                     </Stack>
